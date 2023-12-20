@@ -9,6 +9,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Ass2">
         <activity
+            android:name=".CallActivityActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewPictureActivity"
+            android:exported="false" />
+        <activity
+            android:name=".OpenCameraActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
