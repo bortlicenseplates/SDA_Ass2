@@ -23,5 +23,6 @@ class MainActivity : Activity() {
         val editText = findViewById<View>(R.id.edit_message) as EditText
         val message = editText.text.toString()
         intent.putExtra(EXTRA_MESSAGE, message)
+        startActivity(intent)
     }
 }
