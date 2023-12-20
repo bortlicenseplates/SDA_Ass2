@@ -11,6 +11,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun sendMessage(view: View) {
-        
+
     }
 }
