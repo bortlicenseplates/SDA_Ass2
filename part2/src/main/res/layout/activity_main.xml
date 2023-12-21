@@ -16,7 +16,7 @@
         android:theme="@style/Base.Theme.a2p2.CameraIntent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:onClick="dispatchTakePictureIntent"/>
+        android:onClick="dispatchCameraIntent"/>
 
     <TextView
         android:id="@+id/view_picture_view"
