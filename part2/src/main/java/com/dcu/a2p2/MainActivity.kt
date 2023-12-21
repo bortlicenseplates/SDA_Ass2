@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
 
     val REQUEST_IMAGE_CAPTURE = 1
 
-    fun dispatchTakePictureIntent() {
+    override fun dispatchTakePictureIntent() {
         val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
         try {
             startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE)
