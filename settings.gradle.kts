@@ -14,5 +14,5 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "Ass2"
-include(":a2p1")
-include(":a2p2")
+include(":part1")
+include(":part2")
