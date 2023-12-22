@@ -2,39 +2,41 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".MainActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="0dp" >
+    android:padding="0dp"
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/open_camera_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="@string/open_camera"
+        android:onClick="dispatchCameraIntent"
+        android:text="@string/open_camera_label"
         android:theme="@style/Base.Theme.a2p2.CameraIntent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:onClick="dispatchCameraIntent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/view_picture_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/view_picture"
+        android:onClick="dispatchGalleryIntent"
+        android:text="@string/view_picture_label"
         android:theme="@style/Base.Theme.a2p2.PictureIntent"
-        app:layout_constraintTop_toBottomOf="@id/open_camera_view"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/open_camera_view" />
 
     <TextView
         android:id="@+id/call_activity_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/call_activity"
+        android:onClick="callActivity"
+        android:text="@string/call_activity_label"
         android:theme="@style/Base.Theme.a2p2.ActivityIntent"
-        app:layout_constraintTop_toBottomOf="@id/view_picture_view"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_picture_view" />
 
     <TextView
         android:id="@+id/blank_intent_view"
@@ -43,17 +45,18 @@
         android:background="@color/blankIntentBG"
         android:textColor="@color/textLight"
         android:theme="@style/Base.Theme.a2p2.BlankIntent"
-        app:layout_constraintTop_toBottomOf="@id/call_activity_view"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/call_activity_view" />
 
     <Button
         android:id="@+id/send_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button_label"
-        android:theme="@style/Base.Theme.a2p2.SendButton"
+        android:onClick="composeEmail"
         android:layout_marginTop="12dp"
         android:layout_marginRight="12dp"
-        app:layout_constraintTop_toBottomOf="@id/blank_intent_view"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:text="@string/main_button_send_label"
+        android:theme="@style/Base.Theme.a2p2.SendButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/blank_intent_view" />
 </androidx.constraintlayout.widget.ConstraintLayout>

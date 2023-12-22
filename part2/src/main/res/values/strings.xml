@@ -1,7 +1,14 @@
 <resources>
     <string name="app_name">SDA Assign02-2023 James Ryan</string>
-    <string name="open_camera">Implicit Intent: Open Camera</string>
-    <string name="view_picture">Implicit Intent: View Picture</string>
-    <string name="call_activity">Implicit Intent: Call an activity</string>
-    <string name="button_label">SEND</string>
+    <string name="authorities">com.dcu.a2p2.fileprovider</string>
+    <string name="temp_images_dir">temp_images</string>
+    <string name="temp_image">temp_image.jpg</string>
+    <string name="open_camera_label">Implicit Intent: Open Camera</string>
+    <string name="view_picture_label">Implicit Intent: View Picture</string>
+    <string name="call_activity_label">Implicit Intent: Call an activity</string>
+    <string name="main_button_send_label">SEND</string>
+    <string name="edit_message_to_hint">To:</string>
+    <string name="edit_message_subject_hint">Subject:</string>
+    <string name="edit_message_compose_hint">Compose:</string>
+    <string name="edit_message_button_save_label">SAVE</string>
 </resources>

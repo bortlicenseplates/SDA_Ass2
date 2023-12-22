@@ -7,7 +7,7 @@
 
     <style name="Theme.a2p2" parent="Base.Theme.a2p2" />
     <style name="Base.Theme.a2p2.IntentButton" parent="@android:style/Widget.TextView">
-        <item name="android:padding">12dp</item>
+        <item name="android:padding">16dp</item>
         <item name="android:layout_gravity">right</item>
     </style>
     <style name="Base.Theme.a2p2.CameraIntent" parent="Base.Theme.a2p2.IntentButton">
