@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
 
     private var startCamera =
         registerForActivityResult(TakePicture()) { result ->
+            Log.i(null, "result: $result")
              if (result) {
                 Log.i(null, "YEAH!")
             }
@@ -73,7 +74,8 @@ class MainActivity : AppCompatActivity() {
         }
 
     fun dispatchCameraIntent(view: View) {
-        startCamera.launch(Uri.Builder().build())
+        val imageUri = Uri.parse("android.resource://com.dcu.a2p2/drawable/ic_launcher_background")
+        startCamera.launch(imageUri)
     }
 
     fun dispatchGalleryIntent(view: View) {
