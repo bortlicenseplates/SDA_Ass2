@@ -12,12 +12,14 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.activity.result.contract.ActivityResultContracts.TakePicture
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.FileProvider
+import java.io.File
 
 
 class MainActivity : AppCompatActivity() {
     private var emailData: EmailData? = null;
+    private var photouri: Uri? = null;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -25,10 +27,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private var startCamera =
-        registerForActivityResult(TakePicture()) { result ->
-            Log.i(null, "result: $result")
-             if (result) {
+        registerForActivityResult(ActivityResultContracts.TakePicture()) { success ->
+            if (success) {
                 Log.i(null, "YEAH!")
+                Log.i(null, "photo uri: $photouri")
             }
         }
 
@@ -74,8 +76,21 @@ class MainActivity : AppCompatActivity() {
         }
 
     fun dispatchCameraIntent(view: View) {
-        val imageUri = Uri.parse("android.resource://com.dcu.a2p2/drawable/ic_launcher_background")
-        startCamera.launch(imageUri)
+        val tempFile = File.createTempFile(
+            "temp_image", ".png", cacheDir
+        ).apply {
+            createNewFile()
+        }
+
+        val imageUri = FileProvider.getUriForFile(
+            this,
+            "${packageName}.provider",
+            tempFile
+        )
+
+        startCamera.launch(imageUri).also {
+            photouri = imageUri
+        }
     }
 
     fun dispatchGalleryIntent(view: View) {
